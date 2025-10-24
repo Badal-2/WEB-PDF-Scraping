@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraper & PDF Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input[type="text"], input[type="file"] {
+            width: 400px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Scraper</h1>
+    <input type="text" id="urlInput" placeholder="Paste URL here">
+    <button onclick="scrape()">Scrape</button>
+
+    <hr>
+
+    <h1>PDF Data Extractor</h1>
+    <input type="file" id="pdfInput" accept="application/pdf">
+    <button onclick="extractPDF()">Extract PDF</button>
+
+    <div id="result"></div>
+
+    <script>
+        // ✅ Web Scraping function
+        function scrape() {
+            const url = document.getElementById('urlInput').value;
+            if (!url) {
+                alert("Please enter a URL!");
+                return;
+            }
+
+            document.getElementById('result').textContent = "Scraping in progress...";
+
+            fetch('/scrape/', {
+                method: 'POST',
+                body: JSON.stringify({ url: url }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    document.getElementById('result').textContent = "✅ Web scraping completed successfully.";
+                } else {
+                    document.getElementById('result').textContent = "❌ Scraping failed.";
+                }
+            })
+            .catch(() => {
+                document.getElementById('result').textContent = "⚠️ Something went wrong.";
+            });
+        }
+
+        // ✅ PDF Extraction function
+        function extractPDF() {
+            const fileInput = document.getElementById('pdfInput');
+            if (fileInput.files.length === 0) {
+                alert("Please select a PDF file!");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("pdf", fileInput.files[0]);
+
+            document.getElementById('result').textContent = "Extracting data from PDF...";
+
+            fetch('/extract-pdf/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    document.getElementById('result').textContent = "✅ PDF data extracted successfully. Check console for details.";
+                    console.log("Extracted PDF Data:", data.data);
+                } else {
+                    document.getElementById('result').textContent = "❌ PDF extraction failed.";
+                }
+            })
+            .catch(() => {
+                document.getElementById('result').textContent = "⚠️ Something went wrong.";
+            });
+        }
+    </script>
+</body>
+</html>
