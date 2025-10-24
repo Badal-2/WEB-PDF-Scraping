@@ -56,11 +56,7 @@ POST /scrape_url/
 🧠 Tech Stack
 
 Python 3.10+
-
 Django 5+
-
 Scrapy
-
 pdfplumber
-
 HTML + JS (Frontend)
