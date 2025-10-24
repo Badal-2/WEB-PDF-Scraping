@@ -50,3 +50,17 @@ Open: http://127.0.0.1:8000/
 ▶️ Web Scraping
 
 POST /scrape_url/
+
+
+
+🧠 Tech Stack
+
+Python 3.10+
+
+Django 5+
+
+Scrapy
+
+pdfplumber
+
+HTML + JS (Frontend)
