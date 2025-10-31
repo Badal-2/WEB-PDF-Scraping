@@ -51,7 +51,8 @@ HTML + JS (Frontend)
 
 <img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/37b1dda1-20d2-47a6-8840-99beceb06c75" />
 <img width="1919" height="1076" alt="image" src="https://github.com/user-attachments/assets/38b7c3c8-5a16-4862-8229-db3d7084db90" />
-<img width="1919" height="953" alt="image" src="https://github.com/user-attachments/assets/a9f04cb6-6e70-4c60-a20d-9faa574b9397" />
+![Uploading image.png…]()
+
 
 
 
