@@ -1,5 +1,5 @@
-⚙️ Features
 
+⚙️ Features
 ✅ Web scraping using Scrapy
 ✅ PDF text extraction using pdfplumber
 ✅ Automatic JSON export
@@ -26,15 +26,6 @@ smart-data-extractor/
 ├── pdf_extracted_data/           # Auto-created for storing PDF JSON files
 └── scrapy_output/                # Auto-created for scraped data
 
-💻 How to Run It
-1️⃣ Clone the repo
-git clone https://github.com/YOUR_USERNAME/smart-data-extractor.git
-cd smart-data-extractor
-
-2️⃣ Create & activate virtual environment
-python -m venv env
-source env/bin/activate     # (Linux/Mac)
-env\Scripts\activate        # (Windows)
 
 3️⃣ Install dependencies
 pip install -r requirements.txt
@@ -49,9 +40,6 @@ Open: http://127.0.0.1:8000/
 🌐 API Endpoints
 ▶️ Web Scraping
 
-POST /scrape_url/
-
-
 
 🧠 Tech Stack
 
@@ -60,3 +48,10 @@ Django 5+
 Scrapy
 pdfplumber
 HTML + JS (Frontend)
+
+<img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/37b1dda1-20d2-47a6-8840-99beceb06c75" />
+<img width="1919" height="1076" alt="image" src="https://github.com/user-attachments/assets/38b7c3c8-5a16-4862-8229-db3d7084db90" />
+<img width="1919" height="953" alt="image" src="https://github.com/user-attachments/assets/a9f04cb6-6e70-4c60-a20d-9faa574b9397" />
+
+
+
